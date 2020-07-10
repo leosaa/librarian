@@ -1,0 +1,13 @@
+[Unit]
+Description=Hera Librarian
+After=network.target
+
+[Service]
+Type=idle
+User=heramgr
+Environment=LIBRARIAN_CONFIG_PATH=/opt/services/librarian/scripts/server-config.json
+WorkingDirectory=/opt/services/librarian/scripts
+ExecStart=/opt/services/librarian-local/python-env2/bin/python3 runserver.py
+
+[Install]
+WantedBy=multi-user.target
